@@ -8,7 +8,7 @@ export default function(){
 					const downloadAll = lib.config.extension_下载皮肤_download_all_resources === true;
 					const downloadOL = lib.config.extension_下载皮肤_source === 'ol';
 					const source = downloadOL ? 'ol' : '十周年';
-					const WORKER_URL = "https://yuop.dpdns.org/";
+					const WORKER_URL = "https://yuop.dpdns.org";
 					
 					console.log(`当前源: ${source}`);
 					
@@ -125,6 +125,7 @@ async function downloadFiles(files) {
 			let fileData;
 			
 			if (file.type === 'text') {
+				// 台词文件：直接使用文本
 				fileData = file.text;
 			} else {
 				const fileRes = await fetch(file.url);
